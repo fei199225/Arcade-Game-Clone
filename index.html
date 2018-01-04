@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Effective JavaScript: Frogger</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <script src="js/resources.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/engine.js"></script>
+    <div class="pop_lose" id="bingo">
+        <div class="pop_lose_content">
+            <div class="pop_lose_remind">
+                <p>😔 啊哦～失败了。重新开始吧。</p>
+            </div>
+            <div class="pop_lose_button" onclick="restart()">确认</div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="header_content">
+            <div class="header_content_score">
+                <div class="header_content_score1">分数：</div><div class="header_content_score2" id="score">0</div>
+            </div>
+            <div class="header_content_note">
+                <p id="note">快过来啊！😏</p>
+            </div>
+            <div class="header_content_blood">
+                <p id="blood">♥︎♥︎♥♥︎♥︎︎</p>
+            </div>
+            <div onmouseover="menu_list_over()" onmouseout="menu_list_out()" class="header_content_menu">
+                <p class="line"></p>
+                <p class="line"></p>
+                <p class="line"></p>
+            </div>
+
+        </div>
+    </div>
+    <div class="drop_down_menu">
+        <div class="menu_content">
+            <div id="menu_list" class="menu_content_list" onmouseover="menu_list_over()" onmouseout="menu_list_out()">
+                <div id="btn-instruction" class="btn" onmouseover="instruction_over()" onmouseout="instruction_out()">游戏说明</div>
+                <div id="btn-role" class="btn" onmouseover="menu_role_over()" onmouseout="menu_role_out()">角色</div>
+                <div id="btn-restart" class="btn" onclick="restart()">重新开始</div>
+            </div>
+            <div id="instruction" class="instruction" onmouseover="instruction_over();menu_list_over()" onmouseout="instruction_out();menu_list_out()">
+                <h2>规则</h2>
+                <p>玩家通过上下左右键操控角色躲避甲虫过河。</p>
+                <p>每次成功过河都能获得积分，积分累计。</p>
+                <p>玩家共有五点血量，被甲虫抓住一次消耗一点血量，血量消耗完游戏结束。</p>
+                <p>玩家可以通过菜单选择自己喜欢的角色，可以随时重新开始游戏。</p>
+            </div>
+            <div id="menu_role" class="menu_content_role" onmouseover="menu_role_over();menu_list_over()" onmouseout="menu_role_out();menu_list_out()">
+                <div id="btn-role1" class="btn" onclick="change_roles(1)"><img src="images/char-boy.png" width="50px;" height="85px;"/></div>
+                <div id="btn-role2" class="btn" onclick="change_roles(2)"><img src="images/char-cat-girl.png" width="50px;" height="85px;"/></div>
+                <div id="btn-role3" class="btn" onclick="change_roles(3)"><img src="images/char-horn-girl.png" width="50px;" height="85px;"/></div>
+                <div id="btn-role4" class="btn" onclick="change_roles(4)"><img src="images/char-pink-girl.png" width="50px;" height="85px;"/></div>
+                <div id="btn-role5" class="btn" onclick="change_roles(5)" style="background-color: #104008;"><img src="images/char-princess-girl.png" width="50px;" height="85px;"/></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
